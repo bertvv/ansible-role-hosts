@@ -1,5 +1,24 @@
 ---
 - hosts: all
   sudo: true
+  vars:
+    hosts_add_basic_ipv6: true
+    hosts_add_ansible_managed_hosts: true
+    hosts_entries:
+      - name: slashdot
+        ip: 216.34.181.45
+      - name: gns1
+        ip: 8.8.8.8
+        aliases:
+          - googledns1
+          - googlens1
+      - name: gns2
+        ip: 8.8.4.4
+        aliases:
+          - googledns2
+          - googlens2
+    hosts_file_snippets:
+      - snippets/hosts_blacklist
+      - snippets/hosts_adblock
   roles:
     - hosts
