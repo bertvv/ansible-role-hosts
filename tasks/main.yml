@@ -1,16 +1,11 @@
 # roles/hosts/tasks/main.yml
 ---
 
-- name: Install packages
-  yum:
-    pkg: "{{ item }}"
-    state: installed
-  with_items: hosts_packages
-  tags: hosts
-
-- name: Ensure service is started
-  service:
-    name: "{{ hosts_service }}"
-    state: started
-    enabled: true
+- name: Install custom hosts file
+  template:
+    src: etc_hosts.j2
+    dest: "{{ hosts_file }}"
+    owner: root
+    group: root
+    mode: 0644
   tags: hosts

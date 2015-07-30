@@ -1,0 +1,41 @@
+# Hosts file -- Don't edit manually!
+#
+# {{ ansible_managed }}
+
+127.0.0.1  localhost.localdomain  localhost
+{% if hosts_add_default_ipv4 %}
+{{ ansible_default_ipv4.address }}  {{ ansible_fqdn }} {{ ansible_hostname }}
+{% endif %}
+{% if hosts_add_basic_ipv6 %}
+
+# Basic IPv6 entries
+::1      localhost6.localdomain6  localhost6  ip6-localhost  ip6-loopback
+fe00::0  ip6-localnet
+ff00::0  ip6-mcastprefix
+ff02::1  ip6-allnodes
+ff02::2  ip6-allrouters
+{% endif %}
+{% if hosts_add_ansible_managed_hosts %}
+
+# Entries for Ansible managed hosts
+{% for host in groups['all'] %}
+{{ hostvars[host]['ansible_default_ipv4']['address'] }} {{ hostvars[host]['ansible_fqdn'] }} {{ hostvars[host]['ansible_hostname'] }}
+{% endfor %}
+{% endif %}
+{% if hosts_entries|length != 0 %}
+
+# Custom entries
+{% for host in hosts_entries %}
+{{ host.ip }}  {{ host.name }} {{ host.aliases | default('') | join(' ') }}
+{% endfor %}
+{% endif %}
+{% if hosts_file_snippets|length != 0 %}
+
+#
+# Hosts file snippets
+#
+{% for snippet in hosts_file_snippets %}
+{% include snippet %}
+
+{% endfor %}
+{% endif %}

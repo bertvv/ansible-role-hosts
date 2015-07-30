@@ -1,7 +1,5 @@
 # roles/hosts/vars/main.yml
 ---
 
-hosts_packages:
-  - hosts
+hosts_file: /etc/hosts
 
-hosts_service: hostsd

@@ -1,4 +1,17 @@
 # roles/hosts/defaults/main.yml
 ---
 
+# If set to true, an entry for `ansible_hostname`, bound to the host's default IPv4 address is added added.
+hosts_add_default_ipv4: true
 
+# If set to true, basic IPv6 entries (localhost6, ip6-localnet, etc) are added.
+hosts_add_basic_ipv6: false
+
+# If set to true, an entry for every host managed by Ansible is added. Remark that this makes `hosts_add_default_ipv4` unnecessary, as it will be added as wel by this setting.
+hosts_add_ansible_managed_hosts: false
+
+# Custom hosts entries to be added
+hosts_entries: []
+
+# Custom host file snippets to be added
+hosts_file_snippets: []
