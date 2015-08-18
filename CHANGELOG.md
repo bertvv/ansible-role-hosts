@@ -4,6 +4,12 @@ This file contains al notable changes to the hosts Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
+## 1.0.1 - 2015-08-18
+
+### Changed
+
+- When adding entries for Ansible managed hosts, skip hosts that do not have `ansible_default_ipv4` set.
+
 ## 1.0.0 - 2015-07-30
 
 First release!
