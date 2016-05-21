@@ -18,8 +18,8 @@ ff02::2  ip6-allrouters
 {% if hosts_add_ansible_managed_hosts %}
 
 # Entries for Ansible managed hosts
-{% for host in groups['all'] if hostvars[host]['ansible_default_ipv4'] is defined %}
-{{ hostvars[host]['ansible_default_ipv4']['address'] }} {{ hostvars[host]['ansible_fqdn'] }} {{ hostvars[host]['ansible_hostname'] }}
+{% for host in groups['all'] if hostvars[host][ansible_network_interface] is defined %}
+{{ hostvars[host][ansible_network_interface][ip_protocol]['address'] }} {{ hostvars[host]['ansible_fqdn'] }} {{ hostvars[host]['ansible_hostname'] }}
 {% endfor %}
 {% endif %}
 {% if hosts_entries|length != 0 %}
