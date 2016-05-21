@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  sudo: true
+  become: true
   vars:
     hosts_add_basic_ipv6: true
     hosts_add_ansible_managed_hosts: true
