@@ -4,6 +4,12 @@ This file contains al notable changes to the hosts Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
+## 1.0.2 - 2016-05-21
+
+### Changed
+
+- Fixed Ansible 2.0 deprecation warnings in role (GH-1) and test code. (partial credits to [Ernestas Poskus](https://github.com/ernestas-poskus))
+
 ## 1.0.1 - 2015-08-18
 
 ### Changed

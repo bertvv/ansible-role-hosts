@@ -2,7 +2,6 @@
 galaxy_info:
   author: Bert Van Vreckem
   description: An Ansible role for managing the hosts file (`/etc/hosts`).
-  company:
   license: BSD
   min_ansible_version: 1.7
   platforms:
@@ -32,6 +31,7 @@ galaxy_info:
     - name: Debian
       versions:
       - all
-  categories:
+  galaxy_tags:
     - system
+    - networking
 dependencies: []
