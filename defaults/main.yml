@@ -17,3 +17,9 @@ hosts_entries: []
 
 # Custom host file snippets to be added
 hosts_file_snippets: []
+
+# IP protocol to use
+ip_protocol: 'ipv4'
+
+# Network interface to use
+network_interface: "{{ansible_default_ipv4.interface}}"
