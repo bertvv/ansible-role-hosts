@@ -4,6 +4,7 @@
   vars:
     hosts_add_basic_ipv6: true
     hosts_add_ansible_managed_hosts: true
+    hosts_network_interface: enp0s8
     hosts_entries:
       - name: slashdot
         ip: 216.34.181.45
