@@ -4,6 +4,13 @@ This file contains al notable changes to the hosts Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
+## 1.1.0 - 2016-05-31
+
+### Added
+
+- (GH-2) Allow setting the network interface and IP protocol when adding entries for Ansible managed hosts. (credit: [Ernestas Poskus](https://github.com/ernestas-poskus))
+
+
 ## 1.0.2 - 2016-05-21
 
 ### Changed
