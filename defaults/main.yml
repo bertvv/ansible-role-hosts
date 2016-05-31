@@ -19,7 +19,7 @@ hosts_entries: []
 hosts_file_snippets: []
 
 # IP protocol to use
-ip_protocol: 'ipv4'
+hosts_ip_protocol: 'ipv4'
 
 # Network interface to use
-network_interface: "{{ansible_default_ipv4.interface}}"
+hosts_network_interface: "{{ ansible_default_ipv4.interface }}"
