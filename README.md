@@ -79,5 +79,5 @@ BSD, see <LICENSE.md>
 This role was inspired by the work of [soplakanets](https://github.com/soplakanets/ansible-role-hosts/) (including the [contribution by astrorafael](https://github.com/soplakanets/ansible-role-hosts/pull/1/files)) and [mivok](https://github.com/mivok/ansible-hosts/).
 
 - [Bert Van Vreckem](https://github.com/bertvv/) (maintainer)
+- [Dheeraj Dwivedi](https://github.com/dheerajdwivedi)
 - [Ernestas Poskus](https://github.com/ernestas-poskus)
-
