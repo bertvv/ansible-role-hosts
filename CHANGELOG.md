@@ -4,6 +4,12 @@ This file contains al notable changes to the hosts Ansible role.
 
 This file adheres to the guidelines of [http://keepachangelog.com/](http://keepachangelog.com/). Versioning follows [Semantic Versioning](http://semver.org/).
 
+## 1.2.0 - 2017-07-03
+
+### Added
+
+- (GH-3) Added host file backup flag (Credit: [Dheeraj Dwivedi](https://github.com/dheerajdwivedi))
+
 ## 1.1.0 - 2016-05-31
 
 ### Added
