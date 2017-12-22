@@ -17,17 +17,18 @@ No specific requirements
 
 None of the variables below are required. When not set, the default setting is applied.
 
-| Variable                          | Default                              | Comments                                                                                                          |
-| :---                              | :---                                 | :---                                                                                                              |
-| `hosts_add_default_ipv4`          | true                                 | If true, an entry for the host name is added, bound to the host's default IPv4 address.                           |
-| `hosts_add_basic_ipv6`            | false                                | If true, basic IPv6 entries are added (e.g. localhost6, ip6-localnet, etc.)                                       |
-| `hosts_add_ansible_managed_hosts` | false                                | If true, an entry for hosts managed by Ansible is added. (†)                                                      |
-| `hosts_entries`                   | []                                   | A list of dicts with custom entries to be added to the hosts file. See below for an example.                      |
-| `hosts_file_snippets`             | []                                   | A list of files containing host file snippets to be added to the hosts file verbatim.                             |
-| `hosts_ip_protocol`               | `ipv4`                               | When adding Ansible managed hosts, this specifies the IP protocol (`ipv4` or `ipv6`)                              |
-| `hosts_network_interface`         | `{{ansible_default_ipv4.interface}}` | When adding Ansible managed hosts, this specifies the network interface for which the IP address should be added. |
-| `hosts_file_backup`               | no                                   | If yes, backup of host file is created with timestamp                                                             |
-|                                   |                                      |                                                                                                                   |
+| Variable                                 | Default                              | Comments                                                                                                          |
+| :---                                     | :---                                 | :---                                                                                                              |
+| `hosts_add_default_ipv4`                 | true                                 | If true, an entry for the host name is added, bound to the host's default IPv4 address.                           |
+| `hosts_add_basic_ipv6`                   | false                                | If true, basic IPv6 entries are added (e.g. localhost6, ip6-localnet, etc.)                                       |
+| `hosts_add_ansible_managed_hosts`        | false                                | If true, an entry for hosts managed by Ansible is added. (†)                                                      |
+| `hosts_add_ansible_managed_hosts_groups` | ['all']                              | Control which host entries are created when using `hosts_add_ansible_managed_hosts` |
+| `hosts_entries`                          | []                                   | A list of dicts with custom entries to be added to the hosts file. See below for an example.                      |
+| `hosts_file_snippets`                    | []                                   | A list of files containing host file snippets to be added to the hosts file verbatim.                             |
+| `hosts_ip_protocol`                      | `ipv4`                               | When adding Ansible managed hosts, this specifies the IP protocol (`ipv4` or `ipv6`)                              |
+| `hosts_network_interface`                | `{{ansible_default_ipv4.interface}}` | When adding Ansible managed hosts, this specifies the network interface for which the IP address should be added. |
+| `hosts_file_backup`                      | no                                   | If yes, backup of host file is created with timestamp                                                             |
+|                                          |                                      |                                                                                                                   |
 
 (†) When setting `hosts_add_ansible_managed_hosts`, an entry for the current host will also be added. Consequently, `hosts_add_default_ipv4` doesn't need to be set.
 
@@ -81,3 +82,4 @@ This role was inspired by the work of [soplakanets](https://github.com/soplakane
 - [Bert Van Vreckem](https://github.com/bertvv/) (maintainer)
 - [Dheeraj Dwivedi](https://github.com/dheerajdwivedi)
 - [Ernestas Poskus](https://github.com/ernestas-poskus)
+- [Mohammed Naser](https://github.com/mnaser)
