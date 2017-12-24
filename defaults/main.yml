@@ -12,6 +12,9 @@ hosts_add_basic_ipv6: false
 # If set to true, an entry for every host managed by Ansible is added. Remark that this makes `hosts_add_default_ipv4` unnecessary, as it will be added as wel by this setting.
 hosts_add_ansible_managed_hosts: false
 
+# Select specific groups of Ansible managed hosts to be added in the hosts file.
+hosts_add_ansible_managed_hosts_groups: ['all']
+
 # Custom hosts entries to be added
 hosts_entries: []
 
