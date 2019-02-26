@@ -24,8 +24,9 @@ hosts_file_snippets: []
 # IP protocol to use
 hosts_ip_protocol: 'ipv4'
 
-# Network interface to use
-hosts_network_interface: "{{ ansible_default_ipv4.interface }}"
+# Network interface to use. If empty, use the default adapter for each host.
+# NOTE: this only works if all nodes in your inventory have an adapter with the same name.
+hosts_network_interface: ''
 
 # Backup of previous host
 host_file_backup: no

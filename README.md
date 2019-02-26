@@ -26,7 +26,7 @@ None of the variables below are required. When not set, the default setting is a
 | `hosts_entries`                          | []                                   | A list of dicts with custom entries to be added to the hosts file. See below for an example.                      |
 | `hosts_file_snippets`                    | []                                   | A list of files containing host file snippets to be added to the hosts file verbatim.                             |
 | `hosts_ip_protocol`                      | `ipv4`                               | When adding Ansible managed hosts, this specifies the IP protocol (`ipv4` or `ipv6`)                              |
-| `hosts_network_interface`                | `{{ansible_default_ipv4.interface}}` | When adding Ansible managed hosts, this specifies the network interface for which the IP address should be added. |
+| `hosts_network_interface`                | ''                                   | When adding Ansible managed hosts, this specifies the network interface for which the IP address should be added. |
 | `hosts_file_backup`                      | no                                   | If yes, backup of host file is created with timestamp                                                             |
 |                                          |                                      |                                                                                                                   |
 
