@@ -19,8 +19,25 @@ ff02::2  ip6-allrouters
 
 # Entries for Ansible managed hosts
 {% for group in hosts_add_ansible_managed_hosts_groups %}
-{% for host in groups[group] if hostvars[host][hosts_ansible_network_interface] is defined %}
-{{ hostvars[host][hosts_ansible_network_interface][hosts_ip_protocol]['address'] }} {{ hostvars[host]['ansible_fqdn'] }} {{ hostvars[host]['ansible_hostname'] }}
+{% for host in groups[group]|sort %}
+{% set address = None -%}
+{% if hosts_network_interface -%}
+    {% set interface_config = hostvars[host]['ansible_' + hosts_network_interface] -%}
+    {% if interface_config is defined -%}
+        {% set protocol_config = interface_config[hosts_ip_protocol] -%}
+        {% if protocol_config is defined -%}
+            {% set address = protocol_config['address']|default(None) -%}
+        {% endif -%}
+    {% endif -%}
+{% else -%}
+    {% set protocol_config = hostvars[host]['ansible_default_' + hosts_ip_protocol] -%}
+    {% if protocol_config is defined -%}
+        {% set address = protocol_config['address']|default(None) -%}
+    {% endif -%}
+{% endif -%}
+{% if address %}
+{{ address }} {{ hostvars[host]['ansible_fqdn'] }} {{ hostvars[host]['ansible_hostname'] }}
+{% endif %}
 {% endfor %}
 {% endfor %}
 {% endif %}
