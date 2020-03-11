@@ -34,4 +34,5 @@ galaxy_info:
   galaxy_tags:
     - system
     - networking
+    - hosts
 dependencies: []
