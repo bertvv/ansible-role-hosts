@@ -35,3 +35,5 @@ hosts_file: /etc/hosts
 
 # Which ansible network interface should be used when hosts_add_ansible_managed_hosts is true
 hosts_ansible_network_interface: "ansible_{{ hosts_network_interface }}"
+
+hosts_domain: "local"
