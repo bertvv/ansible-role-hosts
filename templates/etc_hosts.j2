@@ -4,7 +4,7 @@
 
 127.0.0.1  localhost.localdomain  localhost
 {% if hosts_add_default_ipv4 %}
-{{ ansible_default_ipv4.address }}  {{ ansible_hostname }} {{ ansible_hostname }}.{{ hosts_domain }}
+{{ hosts_default_ipv4 | default(ansible_default_ipv4.address) }}  {{ ansible_hostname }} {{ ansible_hostname }}.{{ hosts_domain }}
 {% endif %}
 {% if hosts_add_basic_ipv6 %}
 
