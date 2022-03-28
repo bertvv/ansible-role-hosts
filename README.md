@@ -48,6 +48,9 @@ hosts_entries:
     aliases:
       - googledns2
       - googlens2
+  - name: someone
+    ip: 192.168.0.1
+    domain: local
 ```
 
 ## Dependencies
