@@ -29,7 +29,7 @@ ff02::3  ip6-allhosts
 
 # Custom entries
 {% for host in hosts_entries %}
-{{ host.ip }}  {{ host.name }} {% if hosts_domain is defined or 'domain' in host %}{{ host.name }}.{% if 'domain' in host %}{{ host.domain }}{% else %}{{ hosts_domain }}{% endif %}{% endif %} {{ host.aliases | default('') | join(' ') }}
+{{ host.ip }}  {{ host.name }} {% if hosts_domain is defined or 'domain' in host %}{{ host.name }}.{% if 'domain' in host %}{{ host.domain }}{% else %}{{ hosts_domain }}{% endif %}{% endif %}{% if 'aliases' in host and host.aliases != [] %} {{ host.aliases | default('') | join(' ') }}{% endif %}
 {% endfor %}
 {% endif %}
 {% if hosts_file_snippets|length != 0 %}
