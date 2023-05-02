@@ -4,3 +4,5 @@
 hosts_file: /etc/hosts
 
 hosts_ansible_network_interface: "ansible_{{ hosts_network_interface }}"
+
+hosts_domain: "example.com"
