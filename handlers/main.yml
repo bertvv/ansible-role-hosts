@@ -5,3 +5,4 @@
   service:
     name: hostsd
     state: restarted
+  when: ansible_os_family == "Windows"

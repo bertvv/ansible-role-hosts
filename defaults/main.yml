@@ -28,4 +28,12 @@ hosts_ip_protocol: 'ipv4'
 hosts_network_interface: "{{ ansible_default_ipv4.interface }}"
 
 # Backup of previous host
-host_file_backup: no
+host_file_backup: false
+
+# Where the hosts file lives
+hosts_file: /etc/hosts
+
+# Which ansible network interface should be used when hosts_add_ansible_managed_hosts is true
+hosts_ansible_network_interface: "ansible_{{ hosts_network_interface }}"
+
+hosts_domain: "local"
